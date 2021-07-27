@@ -11,6 +11,10 @@ class ProductController extends Controller
     public function __construct(Request $request)
     {
         $this->request = $request;
+        // $this->middleware('auth')->only([
+        //     'create', 'store'
+        // ]);
+        // $this->middleware('auth')->except('index');
     }
     /**
      * Display a listing of the resource.
@@ -19,7 +23,16 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return "Listando os produtos com resource";
+        $teste = 123;
+        $teste2 = '<h1>Ola</h1>';
+        $products = ['tv', 'console', 'game'];
+        $products2 = [];
+        
+        // return view('teste', ['teste' => $teste]);
+
+        return view('admin.pages.products.index', compact(
+            'teste2', 'teste', 'products', 'products2'
+        ));
     }
 
     /**
