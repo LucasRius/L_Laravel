@@ -7,15 +7,17 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
 
-    protected $request;
-    public function __construct(Request $request)
-    {
-        $this->request = $request;
-        // $this->middleware('auth')->only([
-        //     'create', 'store'
-        // ]);
-        // $this->middleware('auth')->except('index');
-    }
+    // protected $request;
+    // public function __construct(Request $request)
+    // {
+    //     $this->request = $request;
+    //     // $this->middleware('auth')->only([
+    //     //     'create', 'store'
+    //     // ]);
+
+
+    //     // $this->middleware('auth')->except('index');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +44,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.products.create');
     }
 
     /**
@@ -53,7 +55,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        // dd($request->only(['name', 'description']));
+        // dd($request->name);
+        // dd($request->has('name'));
+        //dd($request->input('teste', 'default'));
+        //dd($request->except(['_token']));
     }
 
     /**
@@ -75,7 +82,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.pages.products.edit', compact('id'));
     }
 
     /**
@@ -87,7 +94,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd("Atualizando produto: {$id}");
     }
 
     /**

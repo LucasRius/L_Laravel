@@ -6,6 +6,12 @@
 @section('content')
  {{-- Aula 24 --}}
 
+<a href="{{route('products.create')}}">Cadastrar</a>
+
+
+
+<hr>
+
   <h1>Exibindo os produtos</h1> 
 
 
